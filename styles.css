@@ -486,8 +486,40 @@ img {
   padding: 26px;
 }
 
-.service-card.wide {
-  grid-column: 1 / -1;
+.service-card[open] {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.service-card summary {
+  position: relative;
+  display: block;
+  padding-right: 38px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.service-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card summary::after {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  color: #f0d7ad;
+  content: "+";
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.service-card[open] summary::after {
+  content: "-";
 }
 
 .pillar {
@@ -506,6 +538,25 @@ img {
 .service-card p:not(.pillar) {
   color: #dce6e4;
   line-height: 1.75;
+}
+
+.service-detail {
+  margin-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 20px;
+}
+
+.service-detail p {
+  margin: 0 0 12px;
+}
+
+.service-detail strong {
+  color: var(--white);
+}
+
+.service-boundary {
+  border-left: 3px solid var(--gold-strong);
+  padding-left: 14px;
 }
 
 .service-card ul {
@@ -807,10 +858,6 @@ img {
   .step-grid,
   .split-grid {
     grid-template-columns: 1fr;
-  }
-
-  .service-card.wide {
-    grid-column: auto;
   }
 
   .hero-visual,
