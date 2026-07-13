@@ -1,6 +1,8 @@
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".primary-nav");
 const navLinks = Array.from(document.querySelectorAll(".primary-nav a"));
+const menuToggle = document.querySelector(".menu-toggle");
+const managedMenu = document.querySelector(".managed-menu");
 
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
@@ -14,9 +16,47 @@ if (toggle && nav) {
       nav.classList.remove("open");
       document.body.classList.remove("nav-open");
       toggle.setAttribute("aria-expanded", "false");
+      managedMenu?.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
     });
   });
 }
+
+if (menuToggle && managedMenu) {
+  menuToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = managedMenu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!managedMenu.contains(event.target)) {
+      managedMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      managedMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+const topicFilters = Array.from(document.querySelectorAll("[data-topic-filter]"));
+const insightCards = Array.from(document.querySelectorAll("[data-topic]"));
+
+topicFilters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    const topic = filter.dataset.topicFilter;
+    topicFilters.forEach((item) => item.classList.toggle("active", item === filter));
+    insightCards.forEach((card) => {
+      const visible = topic === "all" || card.dataset.topic === topic;
+      card.hidden = !visible;
+    });
+  });
+});
 
 const sections = navLinks
   .map((link) => {
