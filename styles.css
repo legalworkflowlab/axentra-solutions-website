@@ -1713,6 +1713,51 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.page-hero {
+  background: linear-gradient(135deg, #f7f8f6 0%, #eef5f3 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 82px 0;
+}
+
+.page-hero h1,
+.qx-contact h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.06;
+}
+
+.page-hero p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.faq-grid article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.faq-grid h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 22px;
+}
+
+.faq-grid p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 @media (max-width: 1020px) {
   .qx-hero-grid,
   .qx-apart-grid,
@@ -1722,7 +1767,8 @@ img {
   }
 
   .qx-service-grid,
-  .qx-insight-grid {
+  .qx-insight-grid,
+  .faq-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1751,6 +1797,7 @@ img {
   .qx-service-grid,
   .qx-proof-grid,
   .qx-insight-grid,
+  .faq-grid,
   .qx-footer .footer-links {
     grid-template-columns: 1fr;
   }
