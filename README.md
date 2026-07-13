@@ -1,18 +1,7 @@
-# Axentra Solutions Website
+# Axentra Solutions website
 
-Premium one-page website for Axentra Solutions Pvt. Ltd.
+Public website for Axentra Solutions Pvt. Ltd., covering legal and business operations managed services, delivery structure, leadership, FAQs and contact routes.
 
-## Files
+Preview: https://legalworkflowlab.github.io/axentra-solutions-website/
 
-- `index.html` - page content and structure
-- `styles.css` - responsive visual design
-- `script.js` - mobile navigation and active nav state
-- `assets/axentra-operations-visual.png` - hero visual asset
-
-## Local Preview
-
-Open `index.html` directly in a browser. No build step is required.
-
-## Deployment
-
-This is a static website and can be hosted on GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static hosting service.
+Run `tools/build-site.ps1` from PowerShell to regenerate the static HTML pages after editing shared page data or templates.
