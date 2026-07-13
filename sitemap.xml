@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/</loc></url>
-  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services.html</loc></url>
-  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/operating-model.html</loc></url>
-  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights.html</loc></url>
-  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/founder.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/contract-commercial-operations.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/ediscovery-investigations-document-review.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/bankruptcy-case-operations.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/compliance-governance-privacy.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/case-matter-records-management.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/deal-diligence-transaction-support.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/finance-invoicing-legal-spend.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/kyc-kyb-aml-onboarding.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/mortgage-lending-default-operations.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/property-lease-operations.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/legal-technology-ai-workflows.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/services/process-sop-quality-support.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/how-we-work.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/about.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/ai-governance-india-operating-controls.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/contract-decision-context.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/vendor-contract-operating-model.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/quality-control-operating-signals.html</loc></url>
+  <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/insights/bankruptcy-workflow-capacity.html</loc></url>
   <url><loc>https://legalworkflowlab.github.io/axentra-solutions-website/contact.html</loc></url>
 </urlset>
