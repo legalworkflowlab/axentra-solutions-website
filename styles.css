@@ -2663,6 +2663,64 @@ img {
   padding: 40px;
 }
 
+.positioning-strip {
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  padding: 34px 0;
+}
+
+.visual-panel {
+  min-height: 430px;
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(135deg, rgba(7, 20, 38, 0.38), rgba(12, 109, 104, 0.18)),
+    url("assets/axentra-operations-visual.png") center / cover;
+}
+
+.visual-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.visual-panel-grid span {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(7, 20, 38, 0.78);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 12px;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.leader-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.leader-card span {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.leader-card h3 {
+  margin: 8px 0 0;
+  color: var(--navy);
+  font-size: 24px;
+}
+
 @media (max-width: 1020px) {
   .mega-menu {
     right: -80px;
@@ -2673,6 +2731,7 @@ img {
   .article-grid,
   .linkedin-grid,
   .related-grid,
+  .leadership-grid,
   .service-page-grid,
   .article-hero-grid {
     grid-template-columns: 1fr;
