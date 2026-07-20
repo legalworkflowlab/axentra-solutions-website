@@ -60,17 +60,17 @@ function Get-Header {
         </button>
         <div class="services-panel" id="services-menu-panel">
           <div class="services-panel-intro">
-            <span>Connected operations</span>
-            <strong>Six defined service lines</strong>
+            <span>Alternative legal and business process services</span>
+            <strong>Five primary service areas</strong>
             <a href="$BasePath/services/">View service overview</a>
+            <a href="$BasePath/services/workflow-assessment.html">Explore Workflow Assessment</a>
           </div>
           <div class="services-panel-links">
-            <a href="$BasePath/services/bankruptcy-operations.html"><strong>Bankruptcy Operations</strong><span>Pre-filing through case administration</span></a>
+            <a href="$BasePath/services/bankruptcy-operations.html"><strong>Bankruptcy Operations</strong><span>Pre-filing through post-filing support</span></a>
             <a href="$BasePath/services/mortgage-servicing-default-operations.html"><strong>Mortgage Servicing and Default</strong><span>Loan records, default and bankruptcy interface</span></a>
-            <a href="$BasePath/services/contract-commercial-operations.html"><strong>Contract and Commercial</strong><span>Contract lifecycle and commercial logic</span></a>
-            <a href="$BasePath/services/product-ai-operations.html"><strong>Product and AI Operations</strong><span>Domain UAT and output assurance</span></a>
+            <a href="$BasePath/services/contract-commercial-operations.html"><strong>Contract and Commercial</strong><span>Contracts and commercial data</span></a>
+            <a href="$BasePath/services/legal-tech-ai-quality-support.html"><strong>Legal Tech and AI Quality Support</strong><span>Business-user testing and AI quality review</span></a>
             <a href="$BasePath/services/defined-legal-support.html"><strong>Defined Legal Support</strong><span>Research, review and structured reporting</span></a>
-            <a href="$BasePath/services/workflow-assessment.html"><strong>Workflow Assessment</strong><span>Scope, controls and transition readiness</span></a>
           </div>
         </div>
       </div>
@@ -94,34 +94,32 @@ function Get-Footer {
       <a href="$BasePath/" aria-label="Axentra Solutions home">
         <img src="$BasePath/assets/images/axentra-solutions-logo.jpeg" alt="Axentra Solutions" width="1600" height="600" loading="lazy" />
       </a>
-      <p>Legal, commercial, mortgage, bankruptcy and product operations built around controlled follow-through.</p>
+      <p class="footer-company">Axentra Solutions Pvt. Ltd.</p>
+      <p>Alternative legal and business process services for clients in India and international markets.</p>
     </div>
     <div class="footer-column">
       <h2>Navigate</h2>
       <a href="$BasePath/services/">Services</a>
-      <a href="$BasePath/how-we-work.html">How We Work</a>
       <a href="$BasePath/about.html">About</a>
-      <a href="$BasePath/insights/">Insights</a>
-      <a href="$BasePath/faqs.html">FAQs</a>
+      <a href="$BasePath/contact.html">Contact</a>
     </div>
     <div class="footer-column">
       <h2>Trust</h2>
       <a href="$BasePath/security-trust.html">Security &amp; Trust</a>
       <a href="$BasePath/privacy-notice.html">Privacy Notice</a>
       <a href="$BasePath/legal-notice.html">Legal Notice</a>
-      <a href="$BasePath/accessibility.html">Accessibility</a>
     </div>
     <div class="footer-column">
       <h2>Contact</h2>
       <a href="mailto:$GeneralEmail">$GeneralEmail</a>
       <a href="$LinkedInUrl" target="_blank" rel="noopener noreferrer">Axentra on LinkedIn</a>
-      <a href="$BasePath/contact.html">Discuss a workflow</a>
+      <a href="$BasePath/contact.html">Speak With Axentra</a>
     </div>
   </div>
   <div class="footer-base">
     <div class="container footer-base-inner">
       <p>&copy; 2026 Axentra Solutions Pvt. Ltd.</p>
-      <p>Operational support within client-authorised instructions and review.</p>
+      <p>India-based delivery for clients in India and international markets.</p>
     </div>
   </div>
 </footer>
@@ -157,7 +155,7 @@ $robotsMeta
     <meta property="og:description" content="$Description" />
     <meta property="og:url" content="$Canonical" />
     <meta property="og:image" content="$OgImage" />
-    <meta property="og:image:alt" content="Connected document and workflow records representing Axentra's operating model" />
+    <meta property="og:image:alt" content="Legal and business process teams reviewing documents and workflow information" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>$Title</title>
     <link rel="stylesheet" href="$BasePath/styles.css" />
@@ -258,16 +256,16 @@ function Get-ScopePanel {
 
 function Get-ContactBand {
   param(
-    [string]$Eyebrow = 'Discuss the requirement',
-    [string]$Heading = 'Bring the workflow, not a pre-selected solution',
-    [string]$Copy = 'Start with the source information, current process, review responsibility, exceptions and evidence required at completion.'
+    [string]$Eyebrow = 'Speak with Axentra',
+    [string]$Heading = 'Discuss the support your team needs',
+    [string]$Copy = 'Tell us about the work, expected volumes, timing, systems and team coverage you are considering.'
   )
 
   return @"
 <section class="contact-band">
   <div class="container contact-band-inner">
     <div><p class="eyebrow">$Eyebrow</p><h2>$Heading</h2><p>$Copy</p></div>
-    <a class="button light" href="$BasePath/contact.html">Discuss a Workflow</a>
+    <a class="button light" href="$BasePath/contact.html">Discuss Your Requirement</a>
   </div>
 </section>
 "@

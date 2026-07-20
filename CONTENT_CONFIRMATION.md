@@ -39,7 +39,7 @@ This file records claims, service details and security controls that need eviden
 | Foreclosure administration | Operational records and milestones included; foreclosure conduct, pleading signature and strategy excluded. Confirm jurisdictional role. |
 | Title-document support | Administrative records included; title opinion and certification excluded. Confirm scope. |
 | Bankruptcy interface | Included with links to Bankruptcy Operations. Confirm systems and client reporting. |
-| REO support | Excluded pending confirmation. |
+| REO support | REO file record administration is described. Brokerage, asset-management and property decisions remain excluded pending confirmation. |
 | Borrower communication | Contact-record administration described; collection calls excluded pending confirmation and compliance review. |
 | Debt-collection restrictions | Axentra is not presented as a debt collector. Confirm any future activity before publication. |
 | Licensing requirements | No mortgage, servicing, collection, foreclosure, title, broker or asset-management licence claimed. Obtain jurisdictional review for any expanded role. |
@@ -57,19 +57,19 @@ This file records claims, service details and security controls that need eviden
 | Post-signature obligation support | Included. Confirm repository, ownership and notification arrangements. |
 | CLM systems experience | No CLM products named. Confirm before adding system claims. |
 
-## Product and AI
+## Legal Tech and AI Quality Support
 
 | Confirmation item | Current treatment |
 | --- | --- |
-| UAT experience | Domain and business UAT described. Confirm product types and delivery evidence before experience claims. |
-| Test-script capability | Included. Confirm tools and sample artefacts. |
+| Business-user testing experience | Business-user testing is described and explained as UAT. Confirm product types and delivery evidence before experience claims. |
+| Test-script capability | Not presented as a standalone public capability. Confirm tools and sample artefacts before expanding the service. |
 | Defect-management tools | No tools named. Confirm before adding names. |
 | AI validation experience | Clause extraction and summary validation described. Confirm products, document types and evidence. |
 | Summary-validation experience | Included without accuracy or performance claims. Confirm evidence. |
 | Trend-analysis capability | Included. Confirm taxonomy and reporting examples. |
 | Logic-recommendation capability | Included as recommendations to client teams; implementation claims excluded. |
-| Regression testing | Domain regression packs included. Confirm method and tooling. |
-| Technical-testing exclusions | Source-code, penetration, performance, security and automated testing are expressly excluded. |
+| Retesting | Retesting after corrections is included. Broader regression-testing claims are not published. |
+| Technical-testing exclusions | Source-code, penetration, performance, cybersecurity and full software QA are expressly excluded. |
 
 ## Security
 

@@ -1,6 +1,6 @@
 # Axentra Solutions website
 
-Public multi-page website for Axentra Solutions Pvt. Ltd., covering bankruptcy, mortgage, contract, product and defined legal operations with separate trust, FAQ, insight and notice pages.
+Public multi-page website for Axentra Solutions Pvt. Ltd., an alternative legal and business process services company supporting clients in India and international markets.
 
 Preview: https://legalworkflowlab.github.io/axentra-solutions-website/
 

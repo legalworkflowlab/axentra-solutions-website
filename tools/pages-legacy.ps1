@@ -1,20 +1,22 @@
 $legacyServices = @(
   [pscustomobject]@{Slug='bankruptcy-case-operations';Title='Bankruptcy and Case Operations';Target="$BasePath/services/bankruptcy-operations.html";TargetLabel='View Bankruptcy Operations';Summary='Earlier service-page structure covering bankruptcy and case records.'},
   [pscustomobject]@{Slug='mortgage-lending-default-operations';Title='Mortgage, Lending and Default Operations';Target="$BasePath/services/mortgage-servicing-default-operations.html";TargetLabel='View Mortgage Servicing and Default Operations';Summary='Earlier combined service-page structure covering mortgage, lending and default records.'},
-  [pscustomobject]@{Slug='legal-technology-ai-workflows';Title='Legal Technology and AI Workflow Enablement';Target="$BasePath/services/product-ai-operations.html";TargetLabel='View Product and AI Operations';Summary='Earlier technology-enablement page replaced by the domain UAT and output-assurance service line.'},
-  [pscustomobject]@{Slug='process-sop-quality-support';Title='Process Design, SOP and Quality Support';Target="$BasePath/services/workflow-assessment.html";TargetLabel='View Workflow Assessment';Summary='Earlier process-support page replaced by the structured workflow-assessment service line.'},
-  [pscustomobject]@{Slug='ediscovery-investigations-document-review';Title='eDiscovery, Investigations and Document Review';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current six-line architecture.'},
-  [pscustomobject]@{Slug='compliance-governance-privacy';Title='Compliance, Governance and Privacy';Target="$BasePath/security-trust.html";TargetLabel='View Security and Trust';Summary='Earlier standalone service entry removed from the current six-line architecture.'},
+  [pscustomobject]@{Slug='legal-technology-ai-workflows';Title='Legal Technology and AI Workflow Enablement';Target="$BasePath/services/legal-tech-ai-quality-support.html";TargetLabel='View Legal Tech and AI Quality Support';Summary='Earlier technology-enablement page replaced by the current business-user testing and AI quality-review service.'},
+  [pscustomobject]@{Slug='process-sop-quality-support';Title='Process Design, SOP and Quality Support';Target="$BasePath/services/workflow-assessment.html";TargetLabel='View Workflow Assessment';Summary='Earlier process-support page replaced by the current Workflow Assessment service.'},
+  [pscustomobject]@{Slug='ediscovery-investigations-document-review';Title='eDiscovery, Investigations and Document Review';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current five-service structure.'},
+  [pscustomobject]@{Slug='compliance-governance-privacy';Title='Compliance, Governance and Privacy';Target="$BasePath/security-trust.html";TargetLabel='View Security and Trust';Summary='Earlier standalone service entry removed from the current five-service structure.'},
   [pscustomobject]@{Slug='case-matter-records-management';Title='Case, Matter and Records Management';Target="$BasePath/services/defined-legal-support.html";TargetLabel='View Defined Legal Support';Summary='Earlier standalone service entry consolidated into defined operational support.'},
   [pscustomobject]@{Slug='deal-diligence-transaction-support';Title='Deal, Diligence and Transaction Support';Target="$BasePath/services/defined-legal-support.html";TargetLabel='View Defined Legal Support';Summary='Earlier standalone service entry consolidated into defined operational support.'},
-  [pscustomobject]@{Slug='finance-invoicing-legal-spend';Title='Finance, Invoicing and Legal Spend Operations';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current six-line architecture.'},
-  [pscustomobject]@{Slug='kyc-kyb-aml-onboarding';Title='KYC, KYB, AML and Onboarding';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current six-line architecture.'},
+  [pscustomobject]@{Slug='finance-invoicing-legal-spend';Title='Finance, Invoicing and Legal Spend Operations';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current five-service structure.'},
+  [pscustomobject]@{Slug='kyc-kyb-aml-onboarding';Title='KYC, KYB, AML and Onboarding';Target="$BasePath/services/";TargetLabel='View Current Services';Summary='Earlier standalone service entry removed from the current five-service structure.'},
   [pscustomobject]@{Slug='property-lease-operations';Title='Property and Lease Operations';Target="$BasePath/services/contract-commercial-operations.html";TargetLabel='View Contract and Commercial Operations';Summary='Earlier standalone service entry replaced by a narrower contract and commercial operating scope.'}
 )
 
 $archiveLinks = foreach ($legacy in $legacyServices) {
   '<li><a href="{0}/archive/services/{1}.html">{2}</a></li>' -f $BasePath, $legacy.Slug, $legacy.Title
 }
+
+Write-SiteFile -Path 'services/product-ai-operations.html' -Content (Get-RedirectPage -Title 'Legal Tech and AI Quality Support | Axentra' -Description 'Product and AI Operations has been renamed Legal Tech and AI Quality Support.' -Canonical "$SiteUrl/services/legal-tech-ai-quality-support.html" -Target "$BasePath/services/legal-tech-ai-quality-support.html" -Heading 'This service page has been renamed' -Copy 'Business-user testing and AI quality-review services are now described on the Legal Tech and AI Quality Support page.' -LinkLabel 'View Legal Tech and AI Quality Support')
 
 $archiveIndexMain = @"
 <section class="page-hero policy-hero"><div class="container narrow"><p class="eyebrow">Content archive</p><h1>Superseded service pages</h1><p>Historical records retained outside the current information architecture. These pages are excluded from search indexing and public navigation.</p></div></section>
@@ -32,13 +34,13 @@ foreach ($legacy in $legacyServices) {
 }
 
 Write-SiteFile -Path 'founder.html' -Content (Get-RedirectPage -Title 'About Axentra' -Description 'Axentra founder profiles are on the About page.' -Canonical "$SiteUrl/about.html" -Target "$BasePath/about.html#leadership" -Heading 'Leadership information has moved' -Copy 'The current founder profiles are presented together on the About Axentra page.' -LinkLabel 'View About Axentra')
-Write-SiteFile -Path 'services.html' -Content (Get-RedirectPage -Title 'Services | Axentra' -Description 'Axentra services are available in the current services hub.' -Canonical "$SiteUrl/services/" -Target "$BasePath/services/" -Heading 'Services has moved' -Copy 'View the current six service lines in the Axentra services hub.' -LinkLabel 'View Services')
-Write-SiteFile -Path 'service-lines.html' -Content (Get-RedirectPage -Title 'Services | Axentra' -Description 'Axentra service lines are available in the current services hub.' -Canonical "$SiteUrl/services/" -Target "$BasePath/services/" -Heading 'Service lines have moved' -Copy 'View the current six service lines in the Axentra services hub.' -LinkLabel 'View Services')
-Write-SiteFile -Path 'operating-model.html' -Content (Get-RedirectPage -Title 'How We Work | Axentra' -Description 'Axentra operating tracks are set out on the How We Work page.' -Canonical "$SiteUrl/how-we-work.html" -Target "$BasePath/how-we-work.html" -Heading 'The operating model has moved' -Copy 'The current delivery tracks and workflow-assessment approach are set out on How We Work.' -LinkLabel 'View How We Work')
+Write-SiteFile -Path 'services.html' -Content (Get-RedirectPage -Title 'Services | Axentra' -Description 'Axentra services are available in the current services hub.' -Canonical "$SiteUrl/services/" -Target "$BasePath/services/" -Heading 'Services has moved' -Copy 'View the five primary services and supporting Workflow Assessment option.' -LinkLabel 'View Services')
+Write-SiteFile -Path 'service-lines.html' -Content (Get-RedirectPage -Title 'Services | Axentra' -Description 'Axentra service lines are available in the current services hub.' -Canonical "$SiteUrl/services/" -Target "$BasePath/services/" -Heading 'Service lines have moved' -Copy 'View the five primary services and supporting Workflow Assessment option.' -LinkLabel 'View Services')
+Write-SiteFile -Path 'operating-model.html' -Content (Get-RedirectPage -Title 'How We Work | Axentra' -Description 'Axentra delivery process is set out on the How We Work page.' -Canonical "$SiteUrl/how-we-work.html" -Target "$BasePath/how-we-work.html" -Heading 'How Axentra works has moved' -Copy 'The current five-step delivery process and engagement-specific team approach are set out on How We Work.' -LinkLabel 'View How We Work')
 Write-SiteFile -Path 'insights.html' -Content (Get-RedirectPage -Title 'Insights | Axentra' -Description 'Axentra Insights is now separate from the FAQ library.' -Canonical "$SiteUrl/insights/" -Target "$BasePath/insights/" -Heading 'Insights has moved' -Copy 'Published Axentra posts are now separate from frequently asked questions.' -LinkLabel 'View Insights')
 
 $articleRedirects = @(
-  [pscustomobject]@{Path='insights/ai-governance-india-operating-controls.html';Target="$BasePath/faqs.html#product-and-ai-operations";Heading='AI operations questions have moved';Link='View Product and AI FAQs'},
+  [pscustomobject]@{Path='insights/ai-governance-india-operating-controls.html';Target="$BasePath/faqs.html#legal-tech-and-ai-quality-support";Heading='Legal tech and AI questions have moved';Link='View Legal Tech and AI FAQs'},
   [pscustomobject]@{Path='insights/bankruptcy-workflow-capacity.html';Target="$BasePath/faqs.html#bankruptcy";Heading='Bankruptcy questions have moved';Link='View Bankruptcy FAQs'},
   [pscustomobject]@{Path='insights/contract-decision-context.html';Target="$BasePath/faqs.html#contracts-and-commercial-data";Heading='Contract questions have moved';Link='View Contract FAQs'},
   [pscustomobject]@{Path='insights/vendor-contract-operating-model.html';Target="$BasePath/insights/";Heading='Contract insight links have moved';Link='View Insights'},
@@ -54,7 +56,7 @@ $publicUrls = @(
   "$SiteUrl/services/bankruptcy-operations.html",
   "$SiteUrl/services/mortgage-servicing-default-operations.html",
   "$SiteUrl/services/contract-commercial-operations.html",
-  "$SiteUrl/services/product-ai-operations.html",
+  "$SiteUrl/services/legal-tech-ai-quality-support.html",
   "$SiteUrl/services/defined-legal-support.html",
   "$SiteUrl/services/workflow-assessment.html",
   "$SiteUrl/how-we-work.html",
@@ -88,7 +90,7 @@ Write-SiteFile -Path 'robots.txt' -Content $robots
 $readme = @'
 # Axentra Solutions website
 
-Public multi-page website for Axentra Solutions Pvt. Ltd., covering bankruptcy, mortgage, contract, product and defined legal operations with separate trust, FAQ, insight and notice pages.
+Public multi-page website for Axentra Solutions Pvt. Ltd., an alternative legal and business process services company supporting clients in India and international markets.
 
 Preview: https://legalworkflowlab.github.io/axentra-solutions-website/
 
@@ -138,7 +140,7 @@ This file records claims, service details and security controls that need eviden
 | Foreclosure administration | Operational records and milestones included; foreclosure conduct, pleading signature and strategy excluded. Confirm jurisdictional role. |
 | Title-document support | Administrative records included; title opinion and certification excluded. Confirm scope. |
 | Bankruptcy interface | Included with links to Bankruptcy Operations. Confirm systems and client reporting. |
-| REO support | Excluded pending confirmation. |
+| REO support | REO file record administration is described. Brokerage, asset-management and property decisions remain excluded pending confirmation. |
 | Borrower communication | Contact-record administration described; collection calls excluded pending confirmation and compliance review. |
 | Debt-collection restrictions | Axentra is not presented as a debt collector. Confirm any future activity before publication. |
 | Licensing requirements | No mortgage, servicing, collection, foreclosure, title, broker or asset-management licence claimed. Obtain jurisdictional review for any expanded role. |
@@ -156,19 +158,19 @@ This file records claims, service details and security controls that need eviden
 | Post-signature obligation support | Included. Confirm repository, ownership and notification arrangements. |
 | CLM systems experience | No CLM products named. Confirm before adding system claims. |
 
-## Product and AI
+## Legal Tech and AI Quality Support
 
 | Confirmation item | Current treatment |
 | --- | --- |
-| UAT experience | Domain and business UAT described. Confirm product types and delivery evidence before experience claims. |
-| Test-script capability | Included. Confirm tools and sample artefacts. |
+| Business-user testing experience | Business-user testing is described and explained as UAT. Confirm product types and delivery evidence before experience claims. |
+| Test-script capability | Not presented as a standalone public capability. Confirm tools and sample artefacts before expanding the service. |
 | Defect-management tools | No tools named. Confirm before adding names. |
 | AI validation experience | Clause extraction and summary validation described. Confirm products, document types and evidence. |
 | Summary-validation experience | Included without accuracy or performance claims. Confirm evidence. |
 | Trend-analysis capability | Included. Confirm taxonomy and reporting examples. |
 | Logic-recommendation capability | Included as recommendations to client teams; implementation claims excluded. |
-| Regression testing | Domain regression packs included. Confirm method and tooling. |
-| Technical-testing exclusions | Source-code, penetration, performance, security and automated testing are expressly excluded. |
+| Retesting | Retesting after corrections is included. Broader regression-testing claims are not published. |
+| Technical-testing exclusions | Source-code, penetration, performance, cybersecurity and full software QA are expressly excluded. |
 
 ## Security
 

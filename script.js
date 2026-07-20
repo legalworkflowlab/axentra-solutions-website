@@ -99,7 +99,7 @@ if (serviceSelect) {
     bankruptcy: "Bankruptcy Operations",
     mortgage: "Mortgage Servicing and Default Operations",
     contracts: "Contract and Commercial Operations",
-    "product-ai": "Product and AI Operations",
+    "legal-tech-ai": "Legal Tech and AI Quality Support",
     "defined-legal": "Defined Legal Support",
     assessment: "Workflow Assessment",
   };
@@ -119,17 +119,20 @@ contactForm?.addEventListener("submit", (event) => {
   }
 
   const values = Object.fromEntries(new FormData(contactForm).entries());
-  const subject = `Axentra workflow enquiry: ${values.service}`;
+  const subject = `Axentra service enquiry: ${values.service}`;
   const body = [
     `Name: ${values.name}`,
     `Organisation: ${values.organisation}`,
     `Work email: ${values.email}`,
-    `Service interest: ${values.service}`,
-    `Approximate volume or workload: ${values.volume || "Not provided"}`,
-    `Preferred contact method: ${values.preferred_contact}`,
+    `Country or market: ${values.country_market}`,
+    `Service required: ${values.service}`,
+    `Type of support: ${values.support_type}`,
+    `Approximate volume or team requirement: ${values.volume || "Not provided"}`,
+    `Preferred working hours or time-zone coverage: ${values.working_hours || "Not provided"}`,
+    `Expected duration: ${values.duration || "Not provided"}`,
     "",
-    "Brief workflow or requirement:",
-    values.requirement,
+    "Brief description:",
+    values.description,
   ].join("\n");
 
   if (formStatus) formStatus.textContent = "Opening your email application.";
