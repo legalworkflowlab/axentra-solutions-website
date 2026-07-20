@@ -1,6 +1,6 @@
 # Axentra Solutions website
 
-Public multi-page website for Axentra Solutions Pvt. Ltd., an alternative legal and business process services company supporting clients in India and international markets.
+Public multi-page website for Axentra Solutions Pvt. Ltd., an alternative legal and business process services company that works as an extended specialist team for clients in India and international markets.
 
 Preview: https://legalworkflowlab.github.io/axentra-solutions-website/
 

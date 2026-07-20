@@ -61,16 +61,16 @@ function Get-Header {
         <div class="services-panel" id="services-menu-panel">
           <div class="services-panel-intro">
             <span>Alternative legal and business process services</span>
-            <strong>Five primary service areas</strong>
+            <strong>Five primary services</strong>
             <a href="$BasePath/services/">View service overview</a>
             <a href="$BasePath/services/workflow-assessment.html">Explore Workflow Assessment</a>
           </div>
           <div class="services-panel-links">
-            <a href="$BasePath/services/bankruptcy-operations.html"><strong>Bankruptcy Operations</strong><span>Pre-filing through post-filing support</span></a>
-            <a href="$BasePath/services/mortgage-servicing-default-operations.html"><strong>Mortgage Servicing and Default</strong><span>Loan records, default and bankruptcy interface</span></a>
+            <a href="$BasePath/services/bankruptcy-operations.html"><strong>Bankruptcy Operations</strong><span>Pre-filing through post-filing operations</span></a>
+            <a href="$BasePath/services/mortgage-servicing-default-operations.html"><strong>Mortgage Servicing and Default</strong><span>Loan, default, bankruptcy and post-foreclosure records</span></a>
             <a href="$BasePath/services/contract-commercial-operations.html"><strong>Contract and Commercial</strong><span>Contracts and commercial data</span></a>
-            <a href="$BasePath/services/legal-tech-ai-quality-support.html"><strong>Legal Tech and AI Quality Support</strong><span>Business-user testing and AI quality review</span></a>
-            <a href="$BasePath/services/defined-legal-support.html"><strong>Defined Legal Support</strong><span>Research, review and structured reporting</span></a>
+            <a href="$BasePath/services/legal-tech-ai-quality-services.html"><strong>Legal Tech and AI Quality Services</strong><span>Business-user testing and human validation</span></a>
+            <a href="$BasePath/services/specialist-legal-process-services.html"><strong>Specialist Legal Process Services</strong><span>Research, document review and matter services</span></a>
           </div>
         </div>
       </div>
@@ -96,10 +96,12 @@ function Get-Footer {
       </a>
       <p class="footer-company">Axentra Solutions Pvt. Ltd.</p>
       <p>Alternative legal and business process services for clients in India and international markets.</p>
+      <p class="footer-models">On-demand delivery &middot; Defined projects &middot; Managed workflows &middot; Dedicated teams &middot; Secondments</p>
     </div>
     <div class="footer-column">
       <h2>Navigate</h2>
       <a href="$BasePath/services/">Services</a>
+      <a href="$BasePath/how-we-work.html">How We Work</a>
       <a href="$BasePath/about.html">About</a>
       <a href="$BasePath/contact.html">Contact</a>
     </div>
@@ -257,8 +259,8 @@ function Get-ScopePanel {
 function Get-ContactBand {
   param(
     [string]$Eyebrow = 'Speak with Axentra',
-    [string]$Heading = 'Discuss the support your team needs',
-    [string]$Copy = 'Tell us about the work, expected volumes, timing, systems and team coverage you are considering.'
+    [string]$Heading = 'Discuss your delivery requirement',
+    [string]$Copy = 'Tell us about the work, expected volumes, timing, systems, review requirements and team coverage.'
   )
 
   return @"

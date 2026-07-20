@@ -99,8 +99,9 @@ if (serviceSelect) {
     bankruptcy: "Bankruptcy Operations",
     mortgage: "Mortgage Servicing and Default Operations",
     contracts: "Contract and Commercial Operations",
-    "legal-tech-ai": "Legal Tech and AI Quality Support",
-    "defined-legal": "Defined Legal Support",
+    "legal-tech-ai": "Legal Tech and AI Quality Services",
+    "specialist-legal": "Specialist Legal Process Services",
+    "defined-legal": "Specialist Legal Process Services",
     assessment: "Workflow Assessment",
   };
   const requestedService = new URLSearchParams(window.location.search).get("service");
@@ -126,7 +127,7 @@ contactForm?.addEventListener("submit", (event) => {
     `Work email: ${values.email}`,
     `Country or market: ${values.country_market}`,
     `Service required: ${values.service}`,
-    `Type of support: ${values.support_type}`,
+    `Type of engagement: ${values.engagement_type}`,
     `Approximate volume or team requirement: ${values.volume || "Not provided"}`,
     `Preferred working hours or time-zone coverage: ${values.working_hours || "Not provided"}`,
     `Expected duration: ${values.duration || "Not provided"}`,

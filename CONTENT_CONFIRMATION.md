@@ -57,7 +57,7 @@ This file records claims, service details and security controls that need eviden
 | Post-signature obligation support | Included. Confirm repository, ownership and notification arrangements. |
 | CLM systems experience | No CLM products named. Confirm before adding system claims. |
 
-## Legal Tech and AI Quality Support
+## Legal Tech and AI Quality Services
 
 | Confirmation item | Current treatment |
 | --- | --- |
