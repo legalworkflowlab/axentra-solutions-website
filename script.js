@@ -1,14 +1,14 @@
 const siteHeader = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const primaryNav = document.querySelector(".primary-nav");
-const managedMenu = document.querySelector(".managed-menu");
-const menuToggle = document.querySelector(".menu-toggle");
-const desktopNavigation = window.matchMedia("(min-width: 961px)");
+const servicesMenu = document.querySelector(".services-menu");
+const servicesToggle = document.querySelector(".services-toggle");
+const desktopNavigation = window.matchMedia("(min-width: 1181px)");
 
-const setManagedMenu = (open) => {
-  if (!managedMenu || !menuToggle) return;
-  managedMenu.classList.toggle("open", open);
-  menuToggle.setAttribute("aria-expanded", String(open));
+const setServicesMenu = (open) => {
+  if (!servicesMenu || !servicesToggle) return;
+  servicesMenu.classList.toggle("open", open);
+  servicesToggle.setAttribute("aria-expanded", String(open));
 };
 
 const setPrimaryNav = (open) => {
@@ -17,43 +17,43 @@ const setPrimaryNav = (open) => {
   document.body.classList.toggle("nav-open", open && !desktopNavigation.matches);
   navToggle.setAttribute("aria-expanded", String(open));
   navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-  if (!open) setManagedMenu(false);
+  if (!open) setServicesMenu(false);
 };
 
 navToggle?.addEventListener("click", () => {
   setPrimaryNav(!primaryNav.classList.contains("open"));
 });
 
-menuToggle?.addEventListener("click", (event) => {
+servicesToggle?.addEventListener("click", (event) => {
   event.stopPropagation();
-  setManagedMenu(!managedMenu.classList.contains("open"));
+  setServicesMenu(!servicesMenu.classList.contains("open"));
 });
 
-managedMenu?.addEventListener("mouseenter", () => {
-  if (desktopNavigation.matches) setManagedMenu(true);
+servicesMenu?.addEventListener("mouseenter", () => {
+  if (desktopNavigation.matches) setServicesMenu(true);
 });
 
-managedMenu?.addEventListener("mouseleave", () => {
-  if (desktopNavigation.matches && !managedMenu.contains(document.activeElement)) {
-    setManagedMenu(false);
+servicesMenu?.addEventListener("mouseleave", () => {
+  if (desktopNavigation.matches && !servicesMenu.contains(document.activeElement)) {
+    setServicesMenu(false);
   }
 });
 
-managedMenu?.addEventListener("focusout", (event) => {
-  if (desktopNavigation.matches && !managedMenu.contains(event.relatedTarget)) {
-    setManagedMenu(false);
+servicesMenu?.addEventListener("focusout", (event) => {
+  if (desktopNavigation.matches && !servicesMenu.contains(event.relatedTarget)) {
+    setServicesMenu(false);
   }
 });
 
 primaryNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    setManagedMenu(false);
+    setServicesMenu(false);
     if (!desktopNavigation.matches) setPrimaryNav(false);
   });
 });
 
 document.addEventListener("click", (event) => {
-  if (managedMenu && !managedMenu.contains(event.target)) setManagedMenu(false);
+  if (servicesMenu && !servicesMenu.contains(event.target)) setServicesMenu(false);
   if (!desktopNavigation.matches && siteHeader && !siteHeader.contains(event.target)) {
     setPrimaryNav(false);
   }
@@ -62,9 +62,9 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
 
-  if (managedMenu?.classList.contains("open")) {
-    setManagedMenu(false);
-    menuToggle?.focus();
+  if (servicesMenu?.classList.contains("open")) {
+    setServicesMenu(false);
+    servicesToggle?.focus();
     return;
   }
 
@@ -75,38 +75,63 @@ document.addEventListener("keydown", (event) => {
 });
 
 desktopNavigation.addEventListener("change", () => {
-  setManagedMenu(false);
+  setServicesMenu(false);
   setPrimaryNav(false);
 });
 
-const faqButtons = Array.from(document.querySelectorAll(".faq-question"));
-
-const setFaqState = (button, open) => {
-  const answerId = button.getAttribute("aria-controls");
-  const answer = answerId ? document.getElementById(answerId) : null;
-  if (!answer) return;
-
-  button.setAttribute("aria-expanded", String(open));
-  answer.hidden = !open;
-};
-
-faqButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setFaqState(button, button.getAttribute("aria-expanded") !== "true");
-  });
-});
-
-const openFaqFromHash = () => {
+const openDetailsFromHash = () => {
   const id = window.location.hash.slice(1);
   if (!id) return;
 
-  const item = document.getElementById(id);
-  const button = item?.querySelector(".faq-question");
-  if (!button) return;
-
-  setFaqState(button, true);
-  window.requestAnimationFrame(() => item.scrollIntoView({ block: "start" }));
+  const target = document.getElementById(id);
+  if (target?.tagName === "DETAILS") target.open = true;
 };
 
-window.addEventListener("hashchange", openFaqFromHash);
-openFaqFromHash();
+window.addEventListener("hashchange", openDetailsFromHash);
+openDetailsFromHash();
+
+const contactForm = document.querySelector("#contact-form");
+const serviceSelect = document.querySelector("#contact-service");
+const formStatus = document.querySelector("#form-status");
+
+if (serviceSelect) {
+  const serviceMap = {
+    bankruptcy: "Bankruptcy Operations",
+    mortgage: "Mortgage Servicing and Default Operations",
+    contracts: "Contract and Commercial Operations",
+    "product-ai": "Product and AI Operations",
+    "defined-legal": "Defined Legal Support",
+    assessment: "Workflow Assessment",
+  };
+  const requestedService = new URLSearchParams(window.location.search).get("service");
+  if (requestedService && serviceMap[requestedService]) {
+    serviceSelect.value = serviceMap[requestedService];
+  }
+}
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    if (formStatus) formStatus.textContent = "Complete the required fields before preparing the email.";
+    return;
+  }
+
+  const values = Object.fromEntries(new FormData(contactForm).entries());
+  const subject = `Axentra workflow enquiry: ${values.service}`;
+  const body = [
+    `Name: ${values.name}`,
+    `Organisation: ${values.organisation}`,
+    `Work email: ${values.email}`,
+    `Service interest: ${values.service}`,
+    `Approximate volume or workload: ${values.volume || "Not provided"}`,
+    `Preferred contact method: ${values.preferred_contact}`,
+    "",
+    "Brief workflow or requirement:",
+    values.requirement,
+  ].join("\n");
+
+  if (formStatus) formStatus.textContent = "Opening your email application.";
+  window.location.href = `mailto:info@axentrabusiness.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});

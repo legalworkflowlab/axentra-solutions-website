@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /axentra-solutions-website/archive/
 
 Sitemap: https://legalworkflowlab.github.io/axentra-solutions-website/sitemap.xml
